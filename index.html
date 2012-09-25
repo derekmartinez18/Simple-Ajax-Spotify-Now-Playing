@@ -1,0 +1,107 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Simple AJAX Spotify now playing</title>
+  <meta name="description" content="A simple AJAX/Jquery/PHP tool to show the now playing track on Spotify via Last.FM">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Simple AJAX Spotify now playing</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">A simple AJAX/Jquery/PHP tool to show the now playing track on Spotify via Last.FM</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing" class="code">View Simple AJAX Spotify now playing on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h2>What you need</h2>
+
+<p>An account with Last.fm
+Last.FM API Key (<a href="www.last.fm/api/account">get here</a>)
+A Spotify Account (any type)
+Minimal Knowledge of CSS/HTML
+Website with Jquery enabled</p>
+
+<h2>Setting up</h2>
+
+<p>Simply edit the last.fm.php and where you see
+<code>$user=""
+$key=""</code>
+You add your username and your API key for last.fm (NOT Spotify)</p>
+
+<p>Next you'll need a simple Ajax in jQuery to access this as so:
+<code>&lt;script&gt;
+        $(document).ready(function(){
+            $.ajax({
+                type: 'POST',
+                url: './last.fm.php',
+                data: { request: 'true' },
+                success: function(reply) {
+                    $('.content').html(reply);
+                }
+            });
+        });
+    &lt;/script&gt;</code></p>
+
+<p>Now, all you need is a div or span setup to hold the content once its ready.
+<code>&lt;div class="content"&gt;&lt;center&gt;&lt;div style="padding-top:120px;"&gt;&lt;p&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;br/&gt;&lt;img src="./img/ajax/ajax-loader6.gif"/&gt;&lt;/p&gt;&lt;/div&gt;&lt;/center&gt;&lt;/div&gt;</code></p>
+
+<p>In my example, I use an ajax loading gif to hold the place. This isn't really needed but can be used as a fancy placeholder.</p>
+
+<h2>How it works</h2>
+
+<p>You need to setup your Spotify account to "scrobble" to your last.fm account. This will share your activity to Last.FM. Once you do this, when someone loads your page, a request is sent to the LastFM servers where it returns the latest played songs, the script will then determine if its now playing or recent.</p>
+
+<h2>Results</h2>
+
+<p>If you last listened to a track (not in private session) over a day ago:
+<em>I last listened to Strobe by deadmau5 over a day ago on Spotify</em>
+If you last listened to a track less than a day ago, but not current:
+<em>I last listened to Strobe by deadmau5 3 hours and 25 minutes on Spotify.</em>
+If you are currently listening to a track:
+<em>I am currently listening to Strobe by deadmau5 on Spotify.</em></p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/derekmartinez18" class="avatar"><img src="https://secure.gravatar.com/avatar/8c40867d882c73748c163f893fee71eb?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/derekmartinez18">derekmartinez18</a> maintains <a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing">Simple AJAX Spotify now playing</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing/tarball/master" class="tar">tar</a><a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
