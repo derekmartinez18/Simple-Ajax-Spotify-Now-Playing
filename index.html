@@ -15,16 +15,28 @@
 	<p>A simple tool written in Jquery and PHP to show the now playing, or most recent listened to track on Spotify, using Last.FM!</p>
 	
 	<h2>What you need</h2>
-	An account with Last.fm,<br/>
-	Last.FM API Key (<a href="http://www.last.fm/api/account">get here</a>),<br/>
-	A Spotify Account (any type),<br/>
-	Minimal Knowledge of CSS/HTML,<br/>
-	Website with Jquery enabled<br/>
+	<ul>
+	<li>An account with Last.fm</li>
+	<li>Last.FM API Key (<a href="http://www.last.fm/api/account">get here</a>)</li>
+	<li>A Spotify Account/Client</li>
+	<li>Minimal Knowledge of CSS/HTML</li>
+	<li>Webhosting with PHP 5.x</li>
+	</ul>
 	<h2>Setting up</h2>
 	<p>Simply edit the last.fm.php and where you see 
-	<pre>$user="" $key=""</pre>
-	You add your username and your API key for last.fm (NOT Spotify)</p>
-	Next you'll need a simple Ajax in jQuery to access this as so: 
+	<ol>
+		<li>Create an account, and get API key from LAST.fm</li>
+		<li>Enable "Scrobble" to Last.fm from Spotify Client</li>
+		<li>Configure PHP files, and add to HTML as listed bellow</li>
+	</ol>
+	<br/>
+	There is only a few parts that'll require editing in the PHP file, these are your Last.FM username, and API key. Simply add this information
+	inbetween the quotation variables as shown bellow. Once this is done, the next step is adding Jquery to load this file on page load.
+	<pre>$user="yourusername";
+$key="yourkey";</pre>
+</p><hr/>
+	Here is an example script, you can use this one directly, or use your own custom one for more custom loading. You should also have some custom CSS, simply change the div 'content' to 
+	match your CSS.
 	<pre>&lt;script&gt;
         $(document).ready(function(){
             $.ajax({
@@ -37,22 +49,21 @@
             });
         });
     &lt;/script&gt;</pre>
-	<p>Now, all you need is a div or span setup to hold the content once its ready. 
+	<p>The last step will be to add the div and class, to tell the Jquery where to load the text. This is an example of what you can do, this depends on your websites styling.
 	<pre>&lt;div class="content"&gt;&lt;center&gt;&lt;div style="padding-top:120px;"&gt;&lt;p&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;br/&gt;&lt;img src="./img/ajax/ajax-loader6.gif"/&gt;&lt;/p&gt;&lt;/div&gt;&lt;/center&gt;&lt;/div&gt;</pre>
 	</p>
-	<p>In my example, I use an ajax loading gif to hold the place. This isn't really needed but can be used as a fancy placeholder.</p>
 	<h2>How it works</h2>
 	<p>You need to setup your Spotify account to "scrobble" to your last.fm account. This will share your activity to Last.FM. Once you do this, when someone loads your page, 
 	a request is sent to the LastFM servers where it returns the latest played songs, the script will then determine if its now playing or recent.</p>
 	<h2>Results</h2>
-	<p>If you last listened to a track (not in private session) over a day ago:<br/>
+	<p><strong>If you last listened to a track (not in private session) over a day ago:</strong><br/>
 	<em>I last listened to Strobe by deadmau5 over a day ago on Spotify</em><br/>
-	If you last listened to a track less than a day ago, but not current:<br/>
+	<strong>If you last listened to a track less than a day ago, but not current:</strong><br/>
 	<em>I last listened to Strobe by deadmau5 3 hours and 25 minutes on Spotify.</em><br/>
-	If you are currently listening to a track:<br/>
+	<strong>If you are currently listening to a track:</strong><br/>
 	<em>I am currently listening to Strobe by deadmau5 on Spotify.</em></p><br/>
 	<h2>Downloads</h2>
-	<a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing/zipball/gh-pages">.zip</a><br/>
-	<a href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing">View on GitHub</a><br/>
+	<a class="btn" href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing/zipball/gh-pages">.ZIP</a> 
+	<a class="btn" href="https://github.com/derekmartinez18/Simple-Ajax-Spotify-Now-Playing">View on GitHub</a><br/><br/><br/>
   </body>
 </html>
