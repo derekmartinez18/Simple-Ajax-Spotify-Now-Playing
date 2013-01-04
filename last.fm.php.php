@@ -1,7 +1,7 @@
 <?php
 // Account & API Account Information
-$user = "your last.fm username here";
-$key = "your api key here";
+$user = "your last.fm username here"; // <---- Your username goes here
+$key = "your api key here"; //<-- Your API key goes here
 // The URL of the request to API Service
 $url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$user&api_key=$key&format=json";
 // Setup cURL for request
@@ -10,7 +10,6 @@ $ch = curl_init( $url );
 $options = array(
 	CURLOPT_RETURNTRANSFER => true
 	);
-// ^
 curl_setopt_array($ch, $options);
 // Execute cURL and save return to $json
 $json = curl_exec($ch);
