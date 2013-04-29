@@ -33,9 +33,12 @@ Jquery/Ajax
 Configuring
 --------------
 **Last.FM.php**
-*$user = "your last.fm username here";* kind of explains it self, in the qoutes add your last.fm username.
-*$key = "your api key here";* again, self explained you'll get a key from Last.FM API place it here.
-*$short_titles = false;* If true will trim certain additional text
+	$user = "your last.fm username here";
+kind of explains it self, in the qoutes add your last.fm username.
+	$key = "your api key here";
+again, self explained you'll get a key from Last.FM API place it here.
+	$short_titles = false;
+If true will trim certain additional text
 
 Updates
 --------------
