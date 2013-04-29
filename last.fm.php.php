@@ -43,7 +43,7 @@ if (isset($last['@attr']['nowplaying'])) {
 		if ($hours > 24) // Is it more than 1 day?
 			$time = "over a day ago";
 		else
-			$time = $hours . " hours and " . $minutes . " minutes ago.";
+			$time = $hours . " hours and " . $minutes . " minutes ago";
 	} else
 		$time = $minutes . " minutes ago";
 	$output = "I last listened to " . $last['name'] . ' by ' . $last['artist']['#text'] . " $time on Spotify";

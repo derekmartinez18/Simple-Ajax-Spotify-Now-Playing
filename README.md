@@ -23,7 +23,7 @@ Jquery/Ajax
 			url: './last.fm.php',
 			data: { request: 'true' },
 			success: function(reply) {
-				$('.now-playing').html("<p>" + reply +" on Spotify</p>");
+				$('.now-playing').html("<p>" + reply + "</p>");
 			}
 		});
 	}
