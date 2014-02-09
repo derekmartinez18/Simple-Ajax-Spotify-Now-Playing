@@ -45,9 +45,3 @@ again, self explained you'll get a key from Last.FM API place it here.
 **$short_titles = false;**
 	
 If true will trim certain additional text
-
-Updates
---------------
-[4/29] 
-- Added trimming of useless text like "Album Version", "Explicit Version", "Live" and "(blah blah blah)"
-- Cleaned Code
